@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.weather-app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.search-container {
+  margin-bottom: 1.5rem;
+}
+
+.city-select {
+  width: 300px;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  &:focus {
+    outline: none;
+    border-color: #888;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #555;
+  }
+}
+
+.weather-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.weather-card {
+  flex: 1 1 calc(20% - 1.5rem);
+  min-width: 220px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.city-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.city-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.temperature {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.weather-card.hot {
+  background-color: #fbdada;
+}
+
+.weather-card.cold {
+  background-color: #d0e8f7;
+}
+
+.weather-card.mild {
+  background-color: #f1f5f9;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.remove-icon {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s ease;
+  color: #666;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 1.2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #d32f2f;
+  text-align: center;
+  padding: 1.2rem;
+  background-color: #ffebee;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
